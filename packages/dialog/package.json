@@ -1,0 +1,47 @@
+{
+  "name": "@rmwc/dialog",
+  "version": "14.3.5",
+  "description": "RMWC Dialog component",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "types": "./index.d.ts",
+      "require": "./index.js"
+    },
+    "./styles": {
+      "import": "./styles.mjs",
+      "types": "./styles.d.ts",
+      "require": "./styles.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmwc/rmwc.git"
+  },
+  "keywords": [
+    "rmwc"
+  ],
+  "author": "rmwc",
+  "private": false,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmwc/rmwc/issues"
+  },
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/dialog",
+  "peerDependencies": {
+    "react": ">=16.8.x",
+    "react-dom": ">=16.8.x"
+  },
+  "dependencies": {
+    "@material/dialog": "^14.0.0",
+    "@rmwc/base": "14.3.5",
+    "@rmwc/button": "14.3.5",
+    "@rmwc/textfield": "14.3.5",
+    "@rmwc/types": "14.3.5"
+  }
+}

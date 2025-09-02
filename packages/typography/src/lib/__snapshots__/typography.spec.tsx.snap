@@ -1,0 +1,73 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Typography > renders 1`] = `
+<DocumentFragment>
+  <p
+    class="mdc-typography--body1"
+  />
+</DocumentFragment>
+`;
+
+exports[`Typography > renders with each type 1`] = `
+<DocumentFragment>
+  <h1
+    class="mdc-typography--headline1"
+  />
+  <h2
+    class="mdc-typography--headline2"
+  />
+  <h3
+    class="mdc-typography--headline3"
+  />
+  <h4
+    class="mdc-typography--headline4"
+  />
+  <h5
+    class="mdc-typography--headline5"
+  />
+  <h6
+    class="mdc-typography--headline6"
+  />
+  <h6
+    class="mdc-typography--subtitle1"
+  />
+  <h6
+    class="mdc-typography--subtitle2"
+  />
+  <p
+    class="mdc-typography--body1"
+  />
+  <p
+    class="mdc-typography--body2"
+  />
+  <span
+    class="mdc-typography--caption"
+  />
+  <span
+    class="mdc-typography--button"
+  />
+  <span
+    class="mdc-typography--button"
+  />
+</DocumentFragment>
+`;
+
+exports[`Typography > works with RMWCProvider and typographyDefaults 1`] = `
+<DocumentFragment>
+  <span
+    class="mdc-typography--headline6"
+  >
+    Rendered default \`span\`
+  </span>
+  <span
+    class="mdc-typography--headline5"
+  >
+    Rendered with \`span\`
+  </span>
+  <span
+    class="mdc-typography--body2"
+  >
+    Rendered with \`span\`
+  </span>
+</DocumentFragment>
+`;

@@ -1,0 +1,182 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RichTooltip > can have a link 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-tooltip-wrapper--rich"
+  >
+    <span
+      aria-describedby="tooltip-test"
+      aria-haspopup="dialog"
+      class=""
+      data-tooltip-id="tooltip-test"
+      element="[object Object]"
+    >
+      test
+    </span>
+    <div
+      aria-hidden="false"
+      class="mdc-tooltip mdc-tooltip--rich"
+      id="tooltip-test"
+      role="tooltip"
+    >
+      <div
+        class="mdc-tooltip__surface mdc-tooltip__surface-animation"
+      >
+        <h2
+          class="mdc-tooltip__title"
+        >
+          Title
+        </h2>
+        <p
+          class="mdc-tooltip__content"
+        >
+          <a
+            class="mdc-tooltip__content-link"
+            href="/"
+            target="_blank"
+          >
+            Link
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`RichTooltip > className 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-tooltip-wrapper--rich"
+  >
+    <span
+      aria-describedby="tooltip-test"
+      aria-haspopup="dialog"
+      class=""
+      data-tooltip-id="tooltip-test"
+      element="[object Object]"
+    >
+      test
+    </span>
+    <div
+      aria-hidden="false"
+      class="my-custom-classname mdc-tooltip mdc-tooltip--rich"
+      id="tooltip-test"
+      role="tooltip"
+    >
+      <div
+        class="mdc-tooltip__surface mdc-tooltip__surface-animation"
+      >
+        <h2
+          class="mdc-tooltip__title"
+        >
+          Title
+        </h2>
+        <p
+          class="mdc-tooltip__content"
+        >
+          This is content
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`RichTooltip > renders 1`] = `
+<DocumentFragment>
+  <div
+    class="mdc-tooltip-wrapper--rich"
+  >
+    <span
+      aria-describedby="tooltip-test"
+      aria-haspopup="dialog"
+      class=""
+      data-tooltip-id="tooltip-test"
+      element="[object Object]"
+    >
+      test
+    </span>
+    <div
+      aria-hidden="false"
+      class="mdc-tooltip mdc-tooltip--rich"
+      id="tooltip-test"
+      role="tooltip"
+    >
+      <div
+        class="mdc-tooltip__surface mdc-tooltip__surface-animation"
+      >
+        <h2
+          class="mdc-tooltip__title"
+        >
+          Title
+        </h2>
+        <p
+          class="mdc-tooltip__content"
+        >
+          This is content
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Tooltip > className 1`] = `
+<DocumentFragment>
+  <span
+    aria-describedby="tooltip-test"
+    class=""
+    data-tooltip-id="tooltip-test"
+    element="[object Object]"
+  >
+    test
+  </span>
+  <div
+    id="rmwcPortal"
+  >
+    <div
+      aria-hidden="false"
+      class="my-custom-classname mdc-tooltip"
+      id="tooltip-test"
+      role="tooltip"
+    >
+      <div
+        class="mdc-tooltip__surface mdc-tooltip__surface-animation"
+      >
+        tooltip
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Tooltip > renders 1`] = `
+<DocumentFragment>
+  <span
+    aria-describedby="tooltip-test"
+    class=""
+    data-tooltip-id="tooltip-test"
+    element="[object Object]"
+  >
+    test
+  </span>
+  <div
+    id="rmwcPortal"
+  >
+    <div
+      aria-hidden="false"
+      class="mdc-tooltip"
+      id="tooltip-test"
+      role="tooltip"
+    >
+      <div
+        class="mdc-tooltip__surface mdc-tooltip__surface-animation"
+      >
+        tooltip
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    ignore:
+      - dependency-name: '@nx/*'
+      - dependency-name: 'nx'
+      - dependency-name: '@swc/*'
+      - dependency-name: '@storybook/*'
+      - dependency-name: 'vite*'
+      - dependency-name: '@material/*'
+      - dependency-name: 'material-components-web'
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily

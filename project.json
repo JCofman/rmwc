@@ -1,0 +1,76 @@
+{
+  "name": "workspace",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "targets": {
+    "release-publish": {
+      "dependsOn": ["release-build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx release publish"
+      }
+    },
+    "release-version": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npm version {args.semver} --commit-hooks=false --no-git-tag-version",
+          "git commit -m 'chore(release): bumping root version to {args.semver}' .",
+          "nx release {args.semver} --skip-publish"
+        ],
+        "parallel": false
+      }
+    },
+    "release-build": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "build:components"
+      }
+    },
+    "test": {
+      "executor": "nx:noop"
+    },
+    "storybook": {
+      "executor": "@nx/storybook:storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "./.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/workspace",
+        "configDir": "./.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c ./.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "workspace:build-storybook",
+        "staticFilePath": "dist/storybook/workspace"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "workspace:build-storybook:ci"
+        }
+      }
+    }
+  }
+}

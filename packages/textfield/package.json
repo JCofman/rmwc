@@ -1,0 +1,51 @@
+{
+  "name": "@rmwc/textfield",
+  "version": "14.3.5",
+  "description": "RMWC TextField component",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "types": "./index.d.ts",
+      "require": "./index.js"
+    },
+    "./styles": {
+      "import": "./styles.mjs",
+      "types": "./styles.d.ts",
+      "require": "./styles.js"
+    },
+    "./textfield.css": "./textfield.css"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmwc/rmwc.git"
+  },
+  "keywords": [
+    "rmwc"
+  ],
+  "author": "rmwc",
+  "private": false,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmwc/rmwc/issues"
+  },
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/textfield",
+  "peerDependencies": {
+    "react": ">=16.8.x",
+    "react-dom": ">=16.8.x"
+  },
+  "dependencies": {
+    "@material/textfield": "^14.0.0",
+    "@rmwc/base": "14.3.5",
+    "@rmwc/floating-label": "14.3.5",
+    "@rmwc/icon": "14.3.5",
+    "@rmwc/line-ripple": "14.3.5",
+    "@rmwc/notched-outline": "14.3.5",
+    "@rmwc/ripple": "14.3.5",
+    "@rmwc/types": "14.3.5"
+  }
+}

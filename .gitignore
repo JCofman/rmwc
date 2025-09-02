@@ -32,5 +32,10 @@ yarn-error.log*
 /.vscode/chrome
 /lerna-debug.log
 
+# Nx
+.nx/cache
+.nx/workspace-data
+
 report.*.json
 /rmwc
+generated-*

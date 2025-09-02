@@ -1,0 +1,56 @@
+name: Release
+
+on:
+  pull_request:
+    branches: [master, next]
+    types: [opened, reopened]
+
+permissions:
+  contents: write
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    if: contains(github.head_ref, 'release/')
+    steps:
+      - uses: actions/checkout@v4.2.2
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          token: ${{ secrets.VERSIONING_TOKEN }}
+      - name: Setup Git
+        run: |
+          git config --global user.email "ci@rmwc.io"
+          git config --global user.name "RMWC CI"
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+      - run: npm ci --ignore-scripts
+      - name: 'Patch Release'
+        run: npm run -- release:patch
+        if: contains(github.head_ref, '/patch') && github.base_ref == 'master'
+      - name: 'Minor Release'
+        run: npm run -- release:minor
+        if: contains(github.head_ref, '/minor') && github.base_ref == 'master'
+      - name: 'Major Release'
+        run: npm run -- release:major
+        if: contains(github.head_ref, '/major') && github.base_ref == 'master'
+      - name: 'Prerelease'
+        run: npm run -- release:pre
+        if: contains(github.head_ref, '/pre') && github.base_ref == 'master'
+      - name: 'Patch Prerelease'
+        run: npm run -- release:prepatch
+        if: contains(github.head_ref, '/patch') && github.base_ref == 'next'
+      - name: 'Minor Prerelease'
+        run: npm run -- release:preminor
+        if: contains(github.head_ref, '/minor') && github.base_ref == 'next'
+      - name: 'Major Prerelease'
+        run: npm run -- release:premajor
+        if: contains(github.head_ref, '/major') && github.base_ref == 'next'
+      - name: 'Publish Docs'
+        run: npm run publish:docs
+      - name: 'Push'
+        run: git push --follow-tags

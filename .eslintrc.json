@@ -1,34 +1,38 @@
 {
-  "extends": "react-app",
-  "plugins": ["babel"],
-  "rules": {
-    "no-undef": 0,
-    "space-before-function-paren": "off",
-    "indent": ["off", 2],
-    "max-len": [
-      "warn",
-      80,
-      {
-        "ignoreComments": true,
-        "ignoreTrailingComments": true,
-        "ignoreUrls": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignorePattern": "^[\\S\\s]+\\{.+/\\}"
-      }
-    ],
-    "react/prop-types": "off",
-    "no-unused-expressions": "off",
-    "@typescript-eslint/no-unused-expressions": "off",
-    "babel/no-unused-expressions": "off",
-    "prefer-reflect": "off"
-  },
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx", "@stylistic"],
   "overrides": [
     {
-      "files": ["**/*.js"],
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "no-unused-vars": ["off"],
-        "no-undef": ["off"]
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
+      "rules": {
+        "@stylistic/no-extra-semi": "error"
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {
+        "@stylistic/no-extra-semi": "error"
       }
     }
   ]

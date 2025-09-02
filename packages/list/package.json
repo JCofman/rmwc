@@ -1,0 +1,54 @@
+{
+  "name": "@rmwc/list",
+  "version": "14.3.5",
+  "description": "RMWC List component",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "types": "./index.d.ts",
+      "require": "./index.js"
+    },
+    "./styles": {
+      "import": "./styles.mjs",
+      "types": "./styles.d.ts",
+      "require": "./styles.js"
+    },
+    "./collapsible-list": {
+      "import": "./collapsible-list.mjs",
+      "require": "./collapsible-list.js"
+    },
+    "./collapsible-list.css": "./collapsible-list.css",
+    "./list-item.css": "./list-item.css"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmwc/rmwc.git"
+  },
+  "keywords": [
+    "rmwc"
+  ],
+  "author": "rmwc",
+  "private": false,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmwc/rmwc/issues"
+  },
+  "homepage": "https://github.com/rmwc/rmwc/tree/master/packages/list",
+  "peerDependencies": {
+    "react": ">=16.8.x",
+    "react-dom": ">=16.8.x"
+  },
+  "dependencies": {
+    "@material/list": "^14.0.0",
+    "@rmwc/base": "14.3.5",
+    "@rmwc/icon": "14.3.5",
+    "@rmwc/provider": "14.3.5",
+    "@rmwc/ripple": "14.3.5",
+    "@rmwc/types": "14.3.5"
+  }
+}
